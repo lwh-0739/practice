@@ -2,54 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36cac767-b9b7-47e7-903f-2ff8a819ef62" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__cn_zhgtv_zhgtv_common_exception_0_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__cn_zhgtv_zhgtv_common_result_0_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_5_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_20_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_core_2_8_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_schema_2_8_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spi_2_8_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spring_web_2_8_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger2_2_8_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger_common_2_8_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger_ui_2_8_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_swagger_annotations_1_5_14.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_swagger_models_1_5_14.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_21_0_GA.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mapstruct_mapstruct_1_2_0_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_reflections_reflections_0_9_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_configuration_processor_2_4_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_plugin_spring_plugin_core_1_2_0_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_plugin_spring_plugin_metadata_1_2_0_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jsch-practice/src/main/java/l/w/h/jschpractice/bean/SystemInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jsch-practice/src/main/java/l/w/h/jschpractice/config/SwaggerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jsch-practice/src/main/java/l/w/h/jschpractice/config/property/SwaggerInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jsch-practice/src/main/java/l/w/h/jschpractice/controller/ConnectionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jsch-practice/src/main/java/l/w/h/jschpractice/controller/FileManagerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jsch-practice/src/main/java/l/w/h/jschpractice/exception/BaseException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jsch-practice/src/main/java/l/w/h/jschpractice/exception/ExistedException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jsch-practice/src/main/java/l/w/h/jschpractice/exception/IoException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jsch-practice/src/main/java/l/w/h/jschpractice/exception/LogicException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jsch-practice/src/main/java/l/w/h/jschpractice/exception/NotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jsch-practice/src/main/java/l/w/h/jschpractice/exception/ParameterException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jsch-practice/src/main/java/l/w/h/jschpractice/exception/PermissionException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jsch-practice/src/main/java/l/w/h/jschpractice/init/Init.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jsch-practice/src/main/java/l/w/h/jschpractice/service/FileManagerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jsch-practice/src/main/java/l/w/h/jschpractice/service/impl/FileManagerServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jsch-practice/src/main/java/l/w/h/jschpractice/util/FileComparator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jsch-practice/src/main/java/l/w/h/jschpractice/util/Util.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jsch-practice/src/main/resources/linux-operate.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/error.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/system.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jsch-practice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jsch-practice/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jsch-practice/src/main/java/l/w/h/jschpractice/config/MvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/jsch-practice/src/main/java/l/w/h/jschpractice/config/MvcConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jsch-practice/src/main/java/l/w/h/jschpractice/service/impl/SshServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/jsch-practice/src/main/java/l/w/h/jschpractice/service/impl/SshServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jsch-practice/src/main/java/l/w/h/jschpractice/support/WebSshData.java" beforeDir="false" afterPath="$PROJECT_DIR$/jsch-practice/src/main/java/l/w/h/jschpractice/config/WebSshData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jsch-practice/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/jsch-practice/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jsch-practice/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/jsch-practice/src/main/resources/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -120,7 +74,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RebelAgentSelection">
     <selection>jr</selection>
@@ -212,8 +166,16 @@
       <workItem from="1616470662897" duration="41000" />
       <workItem from="1616727588802" duration="9753000" />
       <workItem from="1616979086511" duration="2182000" />
-      <workItem from="1617066086808" duration="8650000" />
+      <workItem from="1617066086808" duration="8846000" />
     </task>
+    <task id="LOCAL-00001" summary="添加文件管理模块；">
+      <created>1617075348059</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1617075348059</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,5 +196,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
+    <MESSAGE value="添加文件管理模块；" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加文件管理模块；" />
   </component>
 </project>

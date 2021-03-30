@@ -31,11 +31,11 @@ public class MvcConfig implements WebMvcConfigurer {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/static/**")
                 // 外部静态资源
-                // .addResourceLocations("file:./static/");
-                .addResourceLocations("classpath:/static/");
+                .addResourceLocations("file:./static/");
+                // .addResourceLocations("classpath:/static/");
         registry.addResourceHandler("/ssh/**")
-                // .addResourceLocations("file:./static/");
-                .addResourceLocations("classpath:/static/");
+                .addResourceLocations("file:./static/");
+                // .addResourceLocations("classpath:/static/");
         if (swaggerInfo.getEnable()){
             registry.addResourceHandler("swagger-ui.html")
                     .addResourceLocations("classpath:/META-INF/resources/");
