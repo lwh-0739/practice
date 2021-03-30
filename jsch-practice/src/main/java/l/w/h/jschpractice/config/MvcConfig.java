@@ -1,5 +1,6 @@
 package l.w.h.jschpractice.config;
 
+import l.w.h.jschpractice.config.property.ResourceProperty;
 import l.w.h.jschpractice.config.property.SwaggerInfo;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -19,6 +20,9 @@ public class MvcConfig implements WebMvcConfigurer {
     @Resource
     private SwaggerInfo swaggerInfo;
 
+    @Resource
+    private ResourceProperty resourceProperty;
+
     /**
      * 路径前缀
      */
@@ -30,12 +34,9 @@ public class MvcConfig implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/static/**")
-                // 外部静态资源
-                .addResourceLocations("file:./static/");
-                // .addResourceLocations("classpath:/static/");
+                .addResourceLocations(resourceProperty.getPath());
         registry.addResourceHandler("/ssh/**")
-                .addResourceLocations("file:./static/");
-                // .addResourceLocations("classpath:/static/");
+                .addResourceLocations(resourceProperty.getPath());
         if (swaggerInfo.getEnable()){
             registry.addResourceHandler("swagger-ui.html")
                     .addResourceLocations("classpath:/META-INF/resources/");
