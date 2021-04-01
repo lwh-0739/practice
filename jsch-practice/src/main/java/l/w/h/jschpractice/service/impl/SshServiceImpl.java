@@ -9,7 +9,7 @@ import l.w.h.jschpractice.constant.ConstantPool;
 import l.w.h.jschpractice.factory.CustomThreadFactory;
 import l.w.h.jschpractice.service.SshService;
 import l.w.h.jschpractice.support.SshConnectionInfo;
-import l.w.h.jschpractice.support.WebSshData;
+import l.w.h.jschpractice.config.WebSshData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

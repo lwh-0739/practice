@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36cac767-b9b7-47e7-903f-2ff8a819ef62" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jsch-practice/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/jsch-practice/.gitignore" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,11 +24,17 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JRebelWorkspace">
@@ -66,29 +70,31 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../zhgtv-data-platform-v2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RebelAgentSelection">
     <selection>jr</selection>
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\code\practice\jsch-practice\src\main\resources\static" />
-      <recent name="D:\code\practice\jsch-practice\src\main\resources\static\js" />
-      <recent name="D:\code\practice\jsch-practice\src\main\resources\static\css" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\code\practice\jsch-practice\src\main\resources\static" />
       <recent name="D:\code\practice\jsch-practice\src\main\resources\static\js" />
       <recent name="D:\code\practice\jsch-practice\src\main\resources\templates" />
       <recent name="D:\code\practice\jsch-practice\src\main\resources" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\code\practice\jsch-practice\src\main\resources\static\js" />
+      <recent name="D:\code\practice\jsch-practice\src\main\resources" />
+      <recent name="D:\code\practice\jsch-practice\src\main\resources\static" />
+      <recent name="D:\code\practice\jsch-practice\src\main\resources\static\css" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -160,7 +166,50 @@
       <workItem from="1614841181686" duration="10165000" />
       <workItem from="1614906320725" duration="11518000" />
       <workItem from="1614923386974" duration="6617000" />
+      <workItem from="1615182440627" duration="39000" />
+      <workItem from="1616470662897" duration="41000" />
+      <workItem from="1616727588802" duration="9753000" />
+      <workItem from="1616979086511" duration="2182000" />
+      <workItem from="1617066086808" duration="18943000" />
+      <workItem from="1617152410584" duration="9734000" />
+      <workItem from="1617247010693" duration="406000" />
     </task>
+    <task id="LOCAL-00001" summary="添加文件管理模块；">
+      <created>1617075348059</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1617075348059</updated>
+    </task>
+    <task id="LOCAL-00002" summary="内部资源调整为外部资源；">
+      <created>1617075490670</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1617075490670</updated>
+    </task>
+    <task id="LOCAL-00003" summary="调整gitignore文件；">
+      <created>1617076225615</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1617076225615</updated>
+    </task>
+    <task id="LOCAL-00004" summary="全更新；">
+      <created>1617076279509</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1617076279509</updated>
+    </task>
+    <task id="LOCAL-00005" summary="将资源文件设置为可配置；">
+      <created>1617081491376</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1617081491376</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,10 +220,37 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
+    <MESSAGE value="添加文件管理模块；" />
+    <MESSAGE value="内部资源调整为外部资源；" />
+    <MESSAGE value="调整gitignore文件；" />
+    <MESSAGE value="全更新；" />
+    <MESSAGE value="将资源文件设置为可配置；" />
+    <option name="LAST_COMMIT_MESSAGE" value="将资源文件设置为可配置；" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/jsch-practice/src/main/java/l/w/h/jschpractice/service/impl/SshServiceImpl.java</url>
+          <line>126</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/jsch-practice/src/main/java/l/w/h/jschpractice/service/impl/SshServiceImpl.java</url>
+          <line>134</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

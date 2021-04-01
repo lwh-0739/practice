@@ -8,7 +8,7 @@
         <version>1.0.0</version>
     </parent>
     <artifactId>jsch-practice</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <name>jsch-practice</name>
     <description>Demo project for Spring Boot</description>
 
@@ -50,6 +50,33 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+        </dependency>
+
+        <!-- config -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+        </dependency>
+
+        <!-- swagger文档 -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+        </dependency>
+
+        <!-- 通用返回异常 -->
+        <dependency>
+            <groupId>cn.zhgtv</groupId>
+            <artifactId>zhgtv-common-exception</artifactId>
+        </dependency>
+        <!-- 通用返回结果 -->
+        <dependency>
+            <groupId>cn.zhgtv</groupId>
+            <artifactId>zhgtv-common-result</artifactId>
         </dependency>
 
     </dependencies>
