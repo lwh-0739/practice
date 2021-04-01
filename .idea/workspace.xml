@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="36cac767-b9b7-47e7-903f-2ff8a819ef62" name="Default Changelist" comment="配置调整；">
-      <change afterPath="$PROJECT_DIR$/jsch-practice/src/main/java/l/w/h/jschpractice/config/property/ResourceProperty.java" afterDir="false" />
+    <list default="true" id="36cac767-b9b7-47e7-903f-2ff8a819ef62" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jsch-practice/src/main/java/l/w/h/jschpractice/config/MvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/jsch-practice/src/main/java/l/w/h/jschpractice/config/MvcConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jsch-practice/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/jsch-practice/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,6 +30,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JRebelWorkspace">
@@ -68,7 +70,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../iptv_activity" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -89,9 +91,9 @@
       <recent name="D:\code\practice\jsch-practice\src\main\resources" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\code\practice\jsch-practice\src\main\resources\static\js" />
       <recent name="D:\code\practice\jsch-practice\src\main\resources" />
       <recent name="D:\code\practice\jsch-practice\src\main\resources\static" />
-      <recent name="D:\code\practice\jsch-practice\src\main\resources\static\js" />
       <recent name="D:\code\practice\jsch-practice\src\main\resources\static\css" />
     </key>
   </component>
@@ -168,7 +170,9 @@
       <workItem from="1616470662897" duration="41000" />
       <workItem from="1616727588802" duration="9753000" />
       <workItem from="1616979086511" duration="2182000" />
-      <workItem from="1617066086808" duration="11084000" />
+      <workItem from="1617066086808" duration="18943000" />
+      <workItem from="1617152410584" duration="9734000" />
+      <workItem from="1617247010693" duration="406000" />
     </task>
     <task id="LOCAL-00001" summary="添加文件管理模块；">
       <created>1617075348059</created>
@@ -198,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617076279509</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="将资源文件设置为可配置；">
+      <created>1617081491376</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1617081491376</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,6 +234,23 @@
     <MESSAGE value="内部资源调整为外部资源；" />
     <MESSAGE value="调整gitignore文件；" />
     <MESSAGE value="全更新；" />
-    <option name="LAST_COMMIT_MESSAGE" value="全更新；" />
+    <MESSAGE value="将资源文件设置为可配置；" />
+    <option name="LAST_COMMIT_MESSAGE" value="将资源文件设置为可配置；" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/jsch-practice/src/main/java/l/w/h/jschpractice/service/impl/SshServiceImpl.java</url>
+          <line>126</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/jsch-practice/src/main/java/l/w/h/jschpractice/service/impl/SshServiceImpl.java</url>
+          <line>134</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
