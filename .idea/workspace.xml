@@ -2,7 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36cac767-b9b7-47e7-903f-2ff8a819ef62" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-practice/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-practice/src/main/java/StreamPractice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasitc-search-practice/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasitc-search-practice/src/test/java/l/w/h/elasticsearch/ElasticSearchHighLevelTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasitc-search-practice/src/test/java/l/w/h/elasticsearch/ElasticSearchLowLevelTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasitc-search-practice/src/test/java/l/w/h/elasticsearch/highlevelapi/BulkApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasitc-search-practice/src/test/java/l/w/h/elasticsearch/highlevelapi/DeleteApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasitc-search-practice/src/test/java/l/w/h/elasticsearch/highlevelapi/DeleteByQueryApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasitc-search-practice/src/test/java/l/w/h/elasticsearch/highlevelapi/GetApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasitc-search-practice/src/test/java/l/w/h/elasticsearch/highlevelapi/IndexApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasitc-search-practice/src/test/java/l/w/h/elasticsearch/highlevelapi/MultiGetApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasitc-search-practice/src/test/java/l/w/h/elasticsearch/highlevelapi/MultiTermVectorsApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasitc-search-practice/src/test/java/l/w/h/elasticsearch/highlevelapi/ReIndexApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasitc-search-practice/src/test/java/l/w/h/elasticsearch/highlevelapi/RethrottleRequestApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasitc-search-practice/src/test/java/l/w/h/elasticsearch/highlevelapi/TermVectorsApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasitc-search-practice/src/test/java/l/w/h/elasticsearch/highlevelapi/UpdateApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elasitc-search-practice/src/test/java/l/w/h/elasticsearch/highlevelapi/UpdateByQueryApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hutool-practice/src/main/java/l/w/h/hutool/RecognitionImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hutool-practice/src/main/java/l/w/h/hutool/Tokenizer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hutool-practice/src/main/resources/data/dictionary/stopwords.txt.old" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hutool-practice/src/main/resources/data/dictionary/test.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hutool-practice/src/main/resources/library.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library/default.dic" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library/stop.dic" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library/synonyms.dic" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__cn_hutool_hutool_all_5_5_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__cn_hutool_hutool_core_4_5_16.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hutool-practice/hutoolpractice.iml" beforeDir="false" afterPath="$PROJECT_DIR$/hutool-practice/hutoolpractice.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hutool-practice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hutool-practice/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/error.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/system.log" beforeDir="false" afterPath="$PROJECT_DIR$/library/ambiguity.dic" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice.iml" beforeDir="false" afterPath="$PROJECT_DIR$/practice.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,9 +55,29 @@
   <component name="CompilerWorkspaceConfiguration">
     <option name="MAKE_PROJECT_ON_SAVE" value="true" />
   </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="237" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="DefaultGradleProjectSettings">
     <option name="testRunner" value="GRADLE" />
     <option name="delegatedBuild" value="true" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="practice" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -49,20 +108,30 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
+        <option name="alwaysUpdateSnapshots" value="true" />
         <option name="mavenHome" value="D:/apache-maven-3.5.2" />
-        <option name="userSettingsFile" value="D:\MavenRepository\settings.xml" />
+        <option name="printErrorStackTraces" value="true" />
+        <option name="userSettingsFile" value="D:\apache-maven-3.5.2\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="importAutomatically" value="true" />
-        <option name="vmOptionsForImporter" value="-Xmx768m" />
+        <option name="vmOptionsForImporter" value="-Xmx1024m" />
       </MavenImportingSettings>
+    </option>
+    <option name="enabledProfiles">
+      <list>
+        <option value="custom-compiler" />
+      </list>
     </option>
   </component>
   <component name="ProjectId" id="1o0GV3cB7dILNwjoda8YF103Ygb" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -74,28 +143,44 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RebelAgentSelection">
     <selection>jr</selection>
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\code\practice" />
+      <recent name="D:\code\practice\hutool-practice\src\main\resources" />
+      <recent name="D:\code\practice\hutool-practice\src\main\resources\library" />
       <recent name="D:\code\practice\jsch-practice\src\main\resources\static" />
       <recent name="D:\code\practice\jsch-practice\src\main\resources\static\js" />
-      <recent name="D:\code\practice\jsch-practice\src\main\resources\templates" />
-      <recent name="D:\code\practice\jsch-practice\src\main\resources" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\code\practice\hutool-practice\src\main\resources\data\dictionary" />
       <recent name="D:\code\practice\jsch-practice\src\main\resources\static\js" />
       <recent name="D:\code\practice\jsch-practice\src\main\resources" />
       <recent name="D:\code\practice\jsch-practice\src\main\resources\static" />
       <recent name="D:\code\practice\jsch-practice\src\main\resources\static\css" />
     </key>
+  </component>
+  <component name="RestServicesNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="Found 11 services " type="fcff1e1b:RestServiceStructure$RootNode" />
+        </path>
+        <path>
+          <item name="Found 11 services " type="fcff1e1b:RestServiceStructure$RootNode" />
+          <item name="jsch-practice" type="c588b436:RestServiceStructure$ProjectNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -109,7 +194,64 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.JschPracticeApplication">
+  <component name="RunManager" selected="JUnit.StreamPractice.streamTest">
+    <configuration name="Tokenizer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="l.w.h.hutool.Tokenizer" />
+      <module name="hutool-practice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="l.w.h.hutool.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ElasticSearch-High-Level-Test" type="JUnit" factoryName="JUnit" temporary="true">
+      <module name="elasitcsearchpractice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="l.w.h.elasticsearch.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="l.w.h.elasticsearch" />
+      <option name="MAIN_CLASS_NAME" value="l.w.h.elasticsearch.ElasticSearchHighLevelTest" />
+      <option name="METHOD_NAME" value="elasticSearchTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ElasticSearch-low-level-client-test" type="JUnit" factoryName="JUnit" temporary="true">
+      <module name="elasitcsearchpractice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="l.w.h.elasticsearch.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="l.w.h.elasticsearch" />
+      <option name="MAIN_CLASS_NAME" value="l.w.h.elasticsearch.ElasticSearchLowLevelTest" />
+      <option name="METHOD_NAME" value="elasticSearchTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StreamPractice.streamTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="commonpractice" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="StreamPractice" />
+      <option name="METHOD_NAME" value="streamTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="non-spring-test" type="JUnit" factoryName="JUnit" temporary="true">
       <module name="jsch-practice" />
       <extension name="coverage">
@@ -135,11 +277,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Tokenizer" />
       <item itemvalue="JUnit.non-spring-test" />
+      <item itemvalue="JUnit.ElasticSearch-low-level-client-test" />
+      <item itemvalue="JUnit.ElasticSearch-High-Level-Test" />
       <item itemvalue="Spring Boot.JschPracticeApplication" />
+      <item itemvalue="JUnit.StreamPractice.streamTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.StreamPractice.streamTest" />
+        <item itemvalue="JUnit.ElasticSearch-High-Level-Test" />
+        <item itemvalue="JUnit.ElasticSearch-low-level-client-test" />
+        <item itemvalue="Application.Tokenizer" />
         <item itemvalue="JUnit.non-spring-test" />
       </list>
     </recent_temporary>
@@ -172,7 +322,29 @@
       <workItem from="1616979086511" duration="2182000" />
       <workItem from="1617066086808" duration="18943000" />
       <workItem from="1617152410584" duration="9734000" />
-      <workItem from="1617247010693" duration="406000" />
+      <workItem from="1617247010693" duration="1333000" />
+      <workItem from="1618400023440" duration="49000" />
+      <workItem from="1619077542645" duration="2415000" />
+      <workItem from="1619139058521" duration="4202000" />
+      <workItem from="1619144524563" duration="1039000" />
+      <workItem from="1619145653634" duration="1580000" />
+      <workItem from="1619148553038" duration="3349000" />
+      <workItem from="1619157447130" duration="7945000" />
+      <workItem from="1619312342218" duration="25388000" />
+      <workItem from="1619401179219" duration="8208000" />
+      <workItem from="1619573730119" duration="3644000" />
+      <workItem from="1627024663130" duration="118000" />
+      <workItem from="1627026010597" duration="17000" />
+      <workItem from="1628558565026" duration="1151000" />
+      <workItem from="1628561537133" duration="325000" />
+      <workItem from="1628561892780" duration="72714000" />
+      <workItem from="1628816566038" duration="23782000" />
+      <workItem from="1629075985495" duration="16587000" />
+      <workItem from="1629179081425" duration="979000" />
+      <workItem from="1629968329207" duration="1100000" />
+      <workItem from="1630315691064" duration="799000" />
+      <workItem from="1630372716421" duration="8117000" />
+      <workItem from="1631175300718" duration="7975000" />
     </task>
     <task id="LOCAL-00001" summary="添加文件管理模块；">
       <created>1617075348059</created>
@@ -229,6 +401,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
     <MESSAGE value="添加文件管理模块；" />
     <MESSAGE value="内部资源调整为外部资源；" />
@@ -241,16 +414,16 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/jsch-practice/src/main/java/l/w/h/jschpractice/service/impl/SshServiceImpl.java</url>
-          <line>126</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/jsch-practice/src/main/java/l/w/h/jschpractice/service/impl/SshServiceImpl.java</url>
-          <line>134</line>
-          <option name="timeStamp" value="8" />
+          <url>file://$PROJECT_DIR$/elasitc-search-practice/src/test/java/l/w/h/elasticsearch/highlevelapi/GetApi.java</url>
+          <line>119</line>
+          <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/practice$ElasticSearch_High_Level_Test.ic" NAME="ElasticSearch-High-Level-Test Coverage Results" MODIFIED="1628842309214" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>l.w.h.elasticsearch.*</FILTER>
+    </SUITE>
   </component>
 </project>
