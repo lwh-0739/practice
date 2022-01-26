@@ -1,0 +1,11 @@
+spring:
+  datasource:
+#    url: jdbc:mariadb://192.168.2.128:3306/zhgtv_shopping_mall_order_purse
+    url: jdbc:mariadb://localhost:3306/test
+    username: root
+    password: root
+#    password: 123456
+    driver-class-name: org.mariadb.jdbc.Driver
+logging:
+  level:
+    root: debug

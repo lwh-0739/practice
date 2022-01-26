@@ -7,6 +7,7 @@
         <module>jsch-practice</module>
         <module>elasitc-search-practice</module>
         <module>common-practice</module>
+        <module>mybatis-plus-practice</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -134,6 +135,13 @@
                 <artifactId>springfox-swagger-ui</artifactId>
                 <version>${swagger.version}</version>
             </dependency>
+            <!-- swagger文档注解 -->
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>1.5.20</version>
+                <scope>compile</scope>
+            </dependency>
 
             <!-- 通用返回异常 -->
             <dependency>
@@ -160,6 +168,25 @@
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-pool2</artifactId>
                 <version>2.9.0</version>
+            </dependency>
+
+            <!-- mariadb -->
+            <dependency>
+                <groupId>org.mariadb.jdbc</groupId>
+                <artifactId>mariadb-java-client</artifactId>
+                <version>2.7.4</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>3.4.3.4</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.78</version>
             </dependency>
 
         </dependencies>
