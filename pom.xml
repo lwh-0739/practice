@@ -8,6 +8,7 @@
         <module>elasitc-search-practice</module>
         <module>common-practice</module>
         <module>mybatis-plus-practice</module>
+        <module>rx-java-practice</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
