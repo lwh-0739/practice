@@ -1,6 +1,7 @@
 package l.w.h.rxjavapractice;
 
 import com.alibaba.fastjson.JSON;
+import io.reactivex.Flowable;
 import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
@@ -31,6 +32,17 @@ public class RxJavaTest {
         // countTotalScore();
         // countStudentAvg();
         // findMaxScoreEachStudent();
+        // flowableTest();
+    }
+
+    /**
+     * 支持背压
+     */
+    private void flowableTest(){
+        Disposable disposable = Flowable.just("test")
+                .map(s -> "map:  " + s)
+                .subscribe(System.out::println);
+        System.out.println(JSON.toJSONString(disposable));
     }
 
     private void findMaxScoreEachStudent(){
