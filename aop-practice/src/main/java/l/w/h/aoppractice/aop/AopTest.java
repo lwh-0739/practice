@@ -18,8 +18,11 @@ public class AopTest {
 
     private Logger logger = LoggerFactory.getLogger(AopTest.class);
 
-    @Pointcut("execution(public * l.w.h.aoppractice..*.*(..))")
+    @Pointcut("execution(public * l.w.h.aoppractice.controller..*.*(..))")
     public void test(){}
+
+    @Pointcut("execution(public * l.w.h.aoppractice.othercontroller..*.*(..))")
+    public void test1(){}
 
     /**
      * 通知执行顺序：
@@ -27,6 +30,11 @@ public class AopTest {
      * 参数使用：
      *      均可使用：JoinPoint，获取参数、签名等信息，@Around中可使用：ProceedingJoinPoint 获取相关信息
      */
+
+    @Before("test1()")
+    public void test1Before(JoinPoint joinPoint){
+        logger.error("test1 before：执行..." + JSON.toJSONString(joinPoint.getArgs()));
+    }
 
     @Before("test()")
     public void doBefore(JoinPoint joinPoint){
