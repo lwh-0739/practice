@@ -1,6 +1,5 @@
 HELP.md
 target/
-!.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 !**/**/.mvn/**
@@ -34,6 +33,5 @@ build/
 
 ### VS Code ###
 .vscode/
-logs/
-tomcat_*/
+**/tomcat_*/**
 /**/logs/**/*.log
