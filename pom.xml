@@ -11,6 +11,7 @@
         <module>rx-java-practice</module>
         <module>xxl-job-practice</module>
         <module>executor-practice</module>
+        <module>io-practice</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
