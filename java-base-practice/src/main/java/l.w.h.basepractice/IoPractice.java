@@ -1,4 +1,4 @@
-package l.w.h.iopractice;
+package l.w.h.basepractice;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
