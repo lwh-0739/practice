@@ -13,6 +13,8 @@
         <module>executor-practice</module>
         <module>java-base-practice</module>
         <module>common-result</module>
+        <module>redisson-practice</module>
+        <module>aop-practice</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

@@ -1,6 +1,5 @@
 package l.w.h.commonresult.util;
 
-import com.sun.istack.internal.Nullable;
 import l.w.h.commonresult.exception.BaseException;
 import l.w.h.commonresult.exception.CustomException;
 import l.w.h.commonresult.response.BaseResponse;
@@ -51,49 +50,49 @@ public class CommonUtil {
     /**
      * 抛系统异常
      */
-    public static void throwBaseException(@Nullable String message) throws BaseException {
+    public static void throwBaseException(String message) throws BaseException {
         throwException(CustomException.BASE_EXCEPTION.getErrorCode(), whetherUseDefault(message) ? CustomException.BASE_EXCEPTION.getMessage() : message);
     }
 
     /**
      * 抛参数异常
      */
-    public static void throwParameterException(@Nullable String message) throws BaseException {
+    public static void throwParameterException(String message) throws BaseException {
         throwException(CustomException.PARAMETER_EXCEPTION.getErrorCode(), whetherUseDefault(message) ? CustomException.BASE_EXCEPTION.getMessage() : message);
     }
 
     /**
      * 抛参数异常
      */
-    public static void throwExistedException(@Nullable String message) throws BaseException {
+    public static void throwExistedException(String message) throws BaseException {
         throwException(CustomException.EXISTED_EXCEPTION.getErrorCode(), whetherUseDefault(message) ? CustomException.BASE_EXCEPTION.getMessage() : message);
     }
 
     /**
      * 抛IO异常
      */
-    public static void throwIoException(@Nullable String message) throws BaseException {
+    public static void throwIoException(String message) throws BaseException {
         throwException(CustomException.IO_EXCEPTION.getErrorCode(), whetherUseDefault(message) ? CustomException.BASE_EXCEPTION.getMessage() : message);
     }
 
     /**
      * 抛不存在异常
      */
-    public static void throwNotFoundException(@Nullable String message) throws BaseException {
+    public static void throwNotFoundException(String message) throws BaseException {
         throwException(CustomException.NOT_FOUND_EXCEPTION.getErrorCode(), whetherUseDefault(message) ? CustomException.BASE_EXCEPTION.getMessage() : message);
     }
 
     /**
      * 抛逻辑异常
      */
-    public static void throwLogicException(@Nullable String message) throws BaseException {
+    public static void throwLogicException(String message) throws BaseException {
         throwException(CustomException.LOGIC_EXCEPTION.getErrorCode(), whetherUseDefault(message) ? CustomException.BASE_EXCEPTION.getMessage() : message);
     }
 
     /**
      * 抛权限异常
      */
-    public static void throwPermissionException(@Nullable String message) throws BaseException {
+    public static void throwPermissionException(String message) throws BaseException {
         throwException(CustomException.PERMISSION_EXCEPTION.getErrorCode(), whetherUseDefault(message) ? CustomException.BASE_EXCEPTION.getMessage() : message);
     }
 
@@ -110,7 +109,5 @@ public class CommonUtil {
     public static void throwException(Integer errorCode, String customDescription) throws BaseException {
         throw gainErrorResponse(errorCode,customDescription);
     }
-
-
 
 }
