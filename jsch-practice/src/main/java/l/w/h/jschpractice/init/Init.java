@@ -12,14 +12,14 @@ import org.springframework.stereotype.Component;
 public class Init implements CommandLineRunner {
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         String osName = System.getProperty("os.name");
         if (Util.stringContainAnotherString(osName,Util.WIN,true)){
-            Util.osIsLinux = false;
-            Util.encoding = "GBK";
+            Util.setOsIsLinux(false);
+            Util.setEncoding("GBK");
         }else {
-            Util.osIsLinux = true;
-            Util.encoding = "UTF-8";
+            Util.setOsIsLinux(true);
+            Util.setEncoding("UTF-8");
         }
     }
 

@@ -67,6 +67,7 @@ public interface FileManagerService {
 
     /**
      * 上传文件（夹）
+     * @param path 路径
      * @param multipartFiles 文件（夹）
      * @return 是否成功
      */

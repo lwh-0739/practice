@@ -8,7 +8,7 @@ import java.util.stream.Stream;
  * @author lwh
  * @date 2021/9/9 16:17
  **/
-public class StreamPractice {
+public class StreamPracticeTest {
 
     @Test
     public void streamTest(){

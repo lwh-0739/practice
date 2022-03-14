@@ -68,15 +68,10 @@
             <artifactId>springfox-swagger-ui</artifactId>
         </dependency>
 
-        <!-- 通用返回异常 -->
+        <!-- 通用返回 -->
         <dependency>
-            <groupId>cn.zhgtv</groupId>
-            <artifactId>zhgtv-common-exception</artifactId>
-        </dependency>
-        <!-- 通用返回结果 -->
-        <dependency>
-            <groupId>cn.zhgtv</groupId>
-            <artifactId>zhgtv-common-result</artifactId>
+            <groupId>l.w.h</groupId>
+            <artifactId>common-result</artifactId>
         </dependency>
 
     </dependencies>

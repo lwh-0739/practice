@@ -1,7 +1,7 @@
 package l.w.h.jschpractice.service.impl;
 
+import l.w.h.commonresult.util.CommonUtil;
 import l.w.h.jschpractice.bean.SystemInfo;
-import l.w.h.jschpractice.exception.*;
 import l.w.h.jschpractice.service.FileManagerService;
 import l.w.h.jschpractice.util.FileComparator;
 import l.w.h.jschpractice.util.Util;
@@ -38,11 +38,11 @@ public class FileManagerServiceImpl implements FileManagerService {
         File file = new File(path = Util.processPath3(path,errorPre));
         if (!file.exists()){
             Util.errorLog.error("查找指定路径下的目录：path = " + path + " 不存在！");
-            throw new ParameterException("path = " + path + " 不存在！");
+            CommonUtil.throwParameterException("path = " + path + " 不存在！");
         }
         if (file.isFile()){
             Util.errorLog.error("查找指定路径下的目录：path = " + path + " 不是路径！");
-            throw new ParameterException("path = " + path + " 不是路径！");
+            CommonUtil.throwParameterException("path = " + path + " 不是路径！");
         }
         List<File> returnFileList = new ArrayList<>();
         File[] fileList = file.listFiles(pathname -> {
@@ -69,7 +69,7 @@ public class FileManagerServiceImpl implements FileManagerService {
     public String createFileOrFolder(String path, String fileName, Boolean isFile) {
         if (isFile == null){
             Util.errorLog.error("未指定创建的是文件还是目录！");
-            throw new ParameterException("未指定创建的是文件还是目录！");
+            CommonUtil.throwParameterException("未指定创建的是文件还是目录！");
         }
         String type = (isFile ? "文件" : "目录");
         String errorPre = "创建" + type + "：";
@@ -77,18 +77,21 @@ public class FileManagerServiceImpl implements FileManagerService {
         File file = new File(Util.processPath3(path,errorPre) + fileName);
         if (file.exists()){
             Util.errorLog.error(errorPre + "fileName = " + fileName + " 的文件或目录已存在！");
-            throw new ExistedException("fileName = " + fileName + " 的文件或目录已存在！");
+            CommonUtil.throwExistedException("fileName = " + fileName + " 的文件或目录已存在！");
         }
         try {
-            boolean isCreate;
             if (isFile){
-                isCreate = file.createNewFile();
+                if (!file.createNewFile()) {
+                    CommonUtil.throwIoException("创建文件失败！");
+                }
             }else {
-                isCreate = file.mkdir();
+                if (!file.mkdir()) {
+                    CommonUtil.throwIoException("创建目录失败！");
+                }
             }
         }catch (Exception e){
             Util.errorLog.error("创建" + type + "：" + fileName + " 失败！");
-            throw new IoException(e.getMessage());
+            CommonUtil.throwIoException(e.getMessage());
         }
         return "创建" + type + "成功！";
     }
@@ -112,13 +115,13 @@ public class FileManagerServiceImpl implements FileManagerService {
         File file = new File(path = Util.processPath3(path,errorPre),fileName);
         if (!file.exists()){
             Util.errorLog.error(errorPre + path + fileName + " 文件（目录）不存在！");
-            throw new NotFoundException(path + fileName + " 文件（目录）不存在！");
+            CommonUtil.throwNotFoundException(path + fileName + " 文件（目录）不存在！");
         }
         if (!fileName.equals(newName1)){
             String[] list = new File(path).list((dir, name) -> name.equals(newName1));
             if (list != null && list.length > 0){
                 Util.errorLog.error(errorPre + path + " 下已存在newName = " + newName1 + " 的文件或目录！");
-                throw new ExistedException(path + " 下已存在newName = " + newName1 + " 的文件或目录！");
+                CommonUtil.throwExistedException(path + " 下已存在newName = " + newName1 + " 的文件或目录！");
             }
             File f = new File(path,newName1);
             boolean renameTo = file.renameTo(f);
@@ -139,7 +142,7 @@ public class FileManagerServiceImpl implements FileManagerService {
         File file = new File(path = Util.processPath3(path,errorPre),fileName);
         if (!file.exists()){
             Util.errorLog.error(errorPre + path + fileName + " 文件（目录）不存在！");
-            throw new NotFoundException(path + fileName + " 文件（目录）不存在！");
+            CommonUtil.throwNotFoundException(path + fileName + " 文件（目录）不存在！");
         }
         Util.deleteByPath(file);
         return "删除成功！";
@@ -158,19 +161,19 @@ public class FileManagerServiceImpl implements FileManagerService {
         File file = new File(path = Util.processPath3(path,errorPre),fileName);
         if (!file.exists()){
             Util.errorLog.error(errorPre + path + fileName + " 文件不存在！");
-            throw new NotFoundException(path + fileName + " 文件不存在！");
+            CommonUtil.throwNotFoundException(path + fileName + " 文件不存在！");
         }
         if (file.isDirectory()){
             Util.errorLog.error(errorPre + path + fileName + " 是目录！不能查看内容！");
-            throw new LogicException(path + fileName + " 是目录！不能查看内容！");
+            CommonUtil.throwLogicException(path + fileName + " 是目录！不能查看内容！");
         }
         if (!file.canRead()){
             Util.errorLog.error(errorPre + path + fileName + " 文件不能读取！权限为不可读！");
-            throw new PermissionException(path + fileName + " 文件不能读取！权限为不可读！");
+            CommonUtil.throwLogicException(path + fileName + " 文件不能读取！权限为不可读！");
         }
         if (file.length() > Util.OPEN_FILE_MAX){
             Util.errorLog.error(errorPre + "文件：" + path + fileName + " 大小超出限制，请使用ssh客户端查看！");
-            throw new LogicException(path + fileName + " 大小超出限制，请使用ssh客户端查看！");
+            CommonUtil.throwLogicException(path + fileName + " 大小超出限制，请使用ssh客户端查看！");
         }
         return Util.readFile(file,errorPre);
     }
@@ -189,20 +192,20 @@ public class FileManagerServiceImpl implements FileManagerService {
         Util.processString(content,errorPre + "新的文件内容");
         if (content.length() > Util.OPEN_FILE_MAX){
             Util.errorLog.error(errorPre + "文件：" + path + fileName + " 大小超出限制，请使用ssh客户端更新内容！");
-            throw new LogicException(path + fileName + " 大小超出限制，请使用ssh客户端更新内容！");
+            CommonUtil.throwLogicException(path + fileName + " 大小超出限制，请使用ssh客户端更新内容！");
         }
         File file = new File(path = Util.processPath3(path,errorPre),fileName);
         if (!file.exists()){
             Util.errorLog.error(errorPre + path + fileName + " 文件不存在！");
-            throw new NotFoundException(path + fileName + " 文件不存在！");
+            CommonUtil.throwNotFoundException(path + fileName + " 文件不存在！");
         }
         if (file.isDirectory()){
             Util.errorLog.error(errorPre + path + fileName + " 是目录！不能修改内容！");
-            throw new LogicException(path + fileName + " 是目录！不能修改内容！");
+            CommonUtil.throwLogicException(path + fileName + " 是目录！不能修改内容！");
         }
         if (!file.canWrite()){
             Util.errorLog.error(errorPre + path + fileName + " 文件不能写入！权限为不可写入！");
-            throw new PermissionException(path + fileName + " 文件不能写入！权限为不可写入！");
+            CommonUtil.throwPermissionException(path + fileName + " 文件不能写入！权限为不可写入！");
         }
         FileWriter fileWriter = null;
         try {
@@ -211,7 +214,7 @@ public class FileManagerServiceImpl implements FileManagerService {
             fileWriter.flush();
         } catch (Exception e) {
             Util.errorLog.error(errorPre + path + fileName + " 文件写入失败！" + e.getMessage());
-            throw new IoException(path + fileName + " 文件写入失败！" + e.getMessage());
+            CommonUtil.throwIoException(path + fileName + " 文件写入失败！" + e.getMessage());
         } finally {
             Util.close(fileWriter);
         }
@@ -228,12 +231,12 @@ public class FileManagerServiceImpl implements FileManagerService {
         String errorPre = "上传文件（夹）：";
         if (multipartFiles == null || multipartFiles.length == 0){
             Util.errorLog.error(errorPre + "请选择要上传的文件（夹）！");
-            throw new ParameterException("请选择要上传的文件（夹）！");
+            CommonUtil.throwParameterException("请选择要上传的文件（夹）！");
         }
         File file = new File(path = Util.processPath3(path,errorPre));
         if (!file.exists()){
             Util.errorLog.error(errorPre + path + " 路径不存在！");
-            throw new NotFoundException(path + " 路径不存在！");
+            CommonUtil.throwNotFoundException(path + " 路径不存在！");
         }
         /*
          * 验证当前路径下是否存在同名的文件或目录，若存在，则不进行上传
@@ -255,7 +258,7 @@ public class FileManagerServiceImpl implements FileManagerService {
                     }
                     if (pathFileList.contains(originalFilename)){
                         Util.errorLog.error(errorPre + path  + "下存在相同名称的文件或目录：" + originalFilename + "！不能上传！");
-                        throw new ExistedException(path  + "下存在相同名称的文件或目录：" + originalFilename + "！不能上传！请先进行删除！");
+                        CommonUtil.throwExistedException(path  + "下存在相同名称的文件或目录：" + originalFilename + "！不能上传！请先进行删除！");
                     }
                 }
             }
@@ -280,7 +283,7 @@ public class FileManagerServiceImpl implements FileManagerService {
                     multipartFile.transferTo(tmpFile);
                 } catch (IOException e) {
                     Util.errorLog.error(errorPre + "上传文件 " + path + originalFilename + "出现IO异常！" + e.getMessage());
-                    throw new IoException("上传文件 " + path + originalFilename + "出现IO异常！" + e.getMessage());
+                    CommonUtil.throwIoException("上传文件 " + path + originalFilename + "出现IO异常！" + e.getMessage());
                 }
             }
         }
@@ -301,7 +304,7 @@ public class FileManagerServiceImpl implements FileManagerService {
         File file = new File(path,fileName);
         if (!file.exists()){
             Util.errorLog.error(errorPre + path + fileName + " 文件（目录）不存在！");
-            throw new NotFoundException(path + fileName + " 文件（目录）不存在！");
+            CommonUtil.throwNotFoundException(path + fileName + " 文件（目录）不存在！");
         }
         if (file.isDirectory()){
             /*
@@ -385,10 +388,10 @@ public class FileManagerServiceImpl implements FileManagerService {
         byName = byName == null  ? Util.Y : byName;
         if (!Util.Y.equalsIgnoreCase(byName) && !Util.N.equalsIgnoreCase(byName) && !Util.A.equalsIgnoreCase(byName)){
             Util.errorLog.error(errorPre + "byName属性值有误：" + byName);
-            throw new ParameterException("byName属性值有误：" + byName);
+            CommonUtil.throwParameterException("byName属性值有误：" + byName);
         }
         path = Util.processPath3(path,errorPre);
-        ignoreCase = ignoreCase == null ? false : ignoreCase;
+        ignoreCase = ignoreCase != null && ignoreCase;
         List<String> pathList = new ArrayList<>();
         searchFile(pathList,path, keyWord, subList, byName, ignoreCase,errorPre);
         return pathList;
@@ -404,14 +407,11 @@ public class FileManagerServiceImpl implements FileManagerService {
      * @param ignoreCase 是否忽略大小写 true：忽略大小写   false：不忽略大小写   默认false
      */
     private void searchFile(List<String> pathList,String path, String keyWord, List<String> subList, String byName, Boolean ignoreCase,String errorPre){
-        boolean allType = false;
-        if (subList == null || subList.size() == 0){
-            allType = true;
-        }
+        boolean allType = subList == null || subList.size() == 0;
         File file = new File(path);
         if (!file.exists() || file.isFile()){
             Util.errorLog.error(errorPre + path + "不存在或不是目录！");
-            throw new NotFoundException(path + "不存在或不是目录！");
+            CommonUtil.throwNotFoundException(path + "不存在或不是目录！");
         }
         File[] fileList = file.listFiles();
         if (fileList != null && fileList.length > 0){
@@ -429,7 +429,7 @@ public class FileManagerServiceImpl implements FileManagerService {
                     if (byNameIsn || Util.A.equalsIgnoreCase(byName)){
                         if (!f.canRead()){
                             Util.errorLog.error(errorPre + "查询过程中出现异常，无法进行查询：" + f.getAbsolutePath() + " 无读权限！");
-                            throw new PermissionException("查询过程中出现异常，无法进行查询：" + f.getAbsolutePath() + " 无读权限！");
+                            CommonUtil.throwPermissionException("查询过程中出现异常，无法进行查询：" + f.getAbsolutePath() + " 无读权限！");
                         }
                         content = Util.readFile(f,errorPre);
                         if (byNameIsn){

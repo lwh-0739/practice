@@ -32,9 +32,9 @@ import java.util.concurrent.TimeUnit;
 @Service
 public class SshServiceImpl implements SshService {
 
-    private Logger logger = LoggerFactory.getLogger(SshServiceImpl.class);
+    private final Logger logger = LoggerFactory.getLogger(SshServiceImpl.class);
 
-    private ExecutorService executorService = new ThreadPoolExecutor(1,5,60, TimeUnit.SECONDS, new SynchronousQueue<>(),new CustomThreadFactory("web_ssh"));
+    private final ExecutorService executorService = new ThreadPoolExecutor(1,5,60, TimeUnit.SECONDS, new SynchronousQueue<>(),new CustomThreadFactory("web_ssh"));
 
     @Override
     public void initSshConnection(WebSocketSession webSocketSession) {

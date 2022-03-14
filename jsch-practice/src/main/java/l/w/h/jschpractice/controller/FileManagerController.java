@@ -1,9 +1,9 @@
 package l.w.h.jschpractice.controller;
 
-import cn.zhgtv.common.result.BaseResponse;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
+import l.w.h.commonresult.response.BaseResponse;
 import l.w.h.jschpractice.bean.SystemInfo;
 import l.w.h.jschpractice.config.MvcConfig;
 import l.w.h.jschpractice.service.FileManagerService;

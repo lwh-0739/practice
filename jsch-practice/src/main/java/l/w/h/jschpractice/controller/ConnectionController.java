@@ -1,6 +1,6 @@
 package l.w.h.jschpractice.controller;
 
-import cn.zhgtv.common.result.BaseResponse;
+import l.w.h.commonresult.response.BaseResponse;
 import l.w.h.jschpractice.config.WebSshData;
 import l.w.h.jschpractice.util.Util;
 import org.springframework.web.bind.annotation.GetMapping;

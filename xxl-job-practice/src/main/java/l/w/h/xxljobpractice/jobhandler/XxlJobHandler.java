@@ -5,6 +5,7 @@ import com.xxl.job.core.handler.annotation.XxlJob;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -119,16 +120,12 @@ public class XxlJobHandler {
      */
     @XxlJob("httpJobHandler")
     public void httpJobHandler() throws Exception {
-
-        // param parse
         String param = XxlJobHelper.getJobParam();
         if (param==null || param.trim().length()==0) {
             XxlJobHelper.log("param["+ param +"] invalid.");
-
             XxlJobHelper.handleFail();
             return;
         }
-
         String[] httpParams = param.split("\n");
         String url = null;
         String method = null;
@@ -144,31 +141,22 @@ public class XxlJobHandler {
                 data = httpParam.substring(httpParam.indexOf("data:") + 5).trim();
             }
         }
-
-        // param valid
         if (url==null || url.trim().length()==0) {
             XxlJobHelper.log("url["+ url +"] invalid.");
-
             XxlJobHelper.handleFail();
             return;
         }
-        if (method==null || !Arrays.asList("GET", "POST").contains(method)) {
+        if (method==null || !Arrays.asList(RequestMethod.GET, RequestMethod.POST).contains(method)) {
             XxlJobHelper.log("method["+ method +"] invalid.");
-
             XxlJobHelper.handleFail();
             return;
         }
-        boolean isPostMethod = method.equals("POST");
-
-        // request
+        boolean isPostMethod = RequestMethod.POST.name().equals(method);
         HttpURLConnection connection = null;
         BufferedReader bufferedReader = null;
         try {
-            // connection
             URL realUrl = new URL(url);
             connection = (HttpURLConnection) realUrl.openConnection();
-
-            // connection setting
             connection.setRequestMethod(method);
             connection.setDoOutput(isPostMethod);
             connection.setDoInput(true);
@@ -178,25 +166,17 @@ public class XxlJobHandler {
             connection.setRequestProperty("connection", "Keep-Alive");
             connection.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
             connection.setRequestProperty("Accept-Charset", "application/json;charset=UTF-8");
-
-            // do connection
             connection.connect();
-
-            // data
             if (isPostMethod && data!=null && data.trim().length()>0) {
                 DataOutputStream dataOutputStream = new DataOutputStream(connection.getOutputStream());
                 dataOutputStream.write(data.getBytes(StandardCharsets.UTF_8));
                 dataOutputStream.flush();
                 dataOutputStream.close();
             }
-
-            // valid StatusCode
             int statusCode = connection.getResponseCode();
             if (statusCode != 200) {
                 throw new RuntimeException("Http Request StatusCode(" + statusCode + ") Invalid.");
             }
-
-            // result
             bufferedReader = new BufferedReader(new InputStreamReader(connection.getInputStream(), "UTF-8"));
             StringBuilder result = new StringBuilder();
             String line;
@@ -204,12 +184,9 @@ public class XxlJobHandler {
                 result.append(line);
             }
             String responseMsg = result.toString();
-
             XxlJobHelper.log(responseMsg);
-
         } catch (Exception e) {
             XxlJobHelper.log(e);
-
             XxlJobHelper.handleFail();
         } finally {
             try {

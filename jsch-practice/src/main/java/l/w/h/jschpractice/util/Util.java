@@ -1,10 +1,7 @@
 package l.w.h.jschpractice.util;
 
-import cn.zhgtv.common.result.BaseResponse;
-import l.w.h.jschpractice.exception.ExistedException;
-import l.w.h.jschpractice.exception.IoException;
-import l.w.h.jschpractice.exception.NotFoundException;
-import l.w.h.jschpractice.exception.ParameterException;
+import l.w.h.commonresult.response.BaseResponse;
+import l.w.h.commonresult.util.CommonUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.StringUtils;
@@ -29,9 +26,9 @@ import java.util.zip.ZipOutputStream;
  **/
 public class Util {
 
-    public static Boolean osIsLinux;
+    private static Boolean osIsLinux;
 
-    public static String encoding;
+    private static String encoding;
 
     public static final String WIN = "win";
 
@@ -47,14 +44,27 @@ public class Util {
      */
     public static final Logger errorLog  = LoggerFactory.getLogger("errorLog");
 
+    public static Boolean getOsIsLinux(){
+        return Util.osIsLinux;
+    }
+
+    public static void setOsIsLinux(Boolean osIsLinux){
+        Util.osIsLinux = osIsLinux;
+    }
+
+    public static String getEncoding(){
+        return Util.encoding;
+    }
+
+    public static void setEncoding(String encoding){
+        Util.encoding = encoding;
+    }
+
     /**
      * 发送成功请求
      */
     public static <T> BaseResponse<T> sendSuccessResponse(T data){
-        return BaseResponse.<T>builder()
-                .code(BaseResponse.DEFAULT_SUCCESS_CODE)
-                .message(BaseResponse.DEFAULT_SUCCESS_MESSAGE)
-                .result(data).build();
+        return CommonUtil.gainSuccessResponse(data);
     }
 
     /**
@@ -138,7 +148,7 @@ public class Util {
     public static void processString(String string,String errorPre){
         if (string == null || "".equals(string)){
             errorLog.error(errorPre + " 不能为null或\"\"");
-            throw new ParameterException(errorPre + " 不能为null或\"\"");
+            CommonUtil.throwParameterException(errorPre + " 不能为null或\"\"");
         }
     }
 
@@ -177,7 +187,7 @@ public class Util {
         }
         if (!flag){
             Util.errorLog.error(errorPre + "路径格式有误！");
-            throw new ParameterException("路径格式有误！");
+            CommonUtil.throwParameterException("路径格式有误！");
         }
     }
 
@@ -206,7 +216,7 @@ public class Util {
     public static String processFileName(String fileName,String errorPre){
         if (fileName == null || "".equals(fileName)){
             errorLog.error(errorPre + "文件（目录）名称不能为null或\"\"");
-            throw new ParameterException("文件（目录）名称不能为null或\"\"");
+            CommonUtil.throwParameterException("文件（目录）名称不能为null或\"\"");
         }
         int start = 0;
         int lastIndex = fileName.length() - 1;
@@ -237,9 +247,10 @@ public class Util {
      * @param file 文件、目录
      */
     public static void deleteByPath(File file){
-        boolean delete;
         if (file.isFile()){
-            delete = file.delete();
+            if (!file.delete()) {
+                CommonUtil.throwIoException("文件删除失败！");
+            }
         }else {
             File[] fileList = file.listFiles();
             if (fileList != null && fileList.length > 0){
@@ -248,7 +259,9 @@ public class Util {
                     deleteByPath(f);
                 }
             }else {
-                delete = file.delete();
+                if (file.delete()) {
+                    CommonUtil.throwIoException("文件删除失败！");
+                }
             }
         }
     }
@@ -261,10 +274,12 @@ public class Util {
         File file = new File(path);
         if (!file.exists()){
             try {
-                boolean mkdirs = file.mkdirs();
+                if (!file.mkdirs()) {
+                    CommonUtil.throwIoException("创建目录失败！");
+                }
             } catch (Exception e) {
                 errorLog.error("创建" + path + " 失败！");
-                throw new IoException(e.getMessage());
+                CommonUtil.throwIoException(e.getMessage());
             }
         }
     }
@@ -285,7 +300,7 @@ public class Util {
             fileInputStream = new FileInputStream(file);
             bufferedInputStream = new BufferedInputStream(fileInputStream);
             byte[] buffer = new byte[bufferedInputStream.available()];
-            int read = bufferedInputStream.read(buffer);
+            System.out.println(bufferedInputStream.read(buffer));
             response.reset();
             response.addHeader("Content-Disposition",
                     "attachment;filename=" + new String(name.getBytes(), StandardCharsets.ISO_8859_1));
@@ -296,7 +311,7 @@ public class Util {
             bufferedOutputStream.flush();
         } catch (Exception e) {
             errorLog.error("下载文件：" + path + " 失败！");
-            throw new IoException("下载文件：" + path + " 失败！");
+            CommonUtil.throwIoException("下载文件：" + path + " 失败！");
         } finally {
             close(fileInputStream);
             close(bufferedInputStream);
@@ -314,7 +329,7 @@ public class Util {
         File file = new File(zipPath);
         if (file.exists()){
             errorLog.error(zipPath + " 已存在！不能下载！");
-            throw new ExistedException(zipPath + " 已存在！不能下载！");
+            CommonUtil.throwExistedException(zipPath + " 已存在！不能下载！");
         }
         File folder = new File(sourcePath);
         boolean flag = true;
@@ -328,7 +343,7 @@ public class Util {
         }
         if (!flag){
             errorLog.error(sourcePath + " 目录不存在或该目录下无文件！");
-            throw new NotFoundException(sourcePath + " 目录不存在或该目录下无文件！");
+            CommonUtil.throwNotFoundException(sourcePath + " 目录不存在或该目录下无文件！");
         }
         FileOutputStream fileOutputStream = null;
         ZipOutputStream zipOutputStream = null;
@@ -338,7 +353,7 @@ public class Util {
             writeZip(folder,"",zipOutputStream);
         } catch (Exception e) {
             errorLog.error(sourcePath + " 目录压缩失败：" + e.getMessage());
-            throw new IoException(sourcePath + " 目录压缩失败：" + e.getMessage());
+            CommonUtil.throwIoException(sourcePath + " 目录压缩失败：" + e.getMessage());
         } finally {
             Util.close(zipOutputStream);
             Util.close(fileOutputStream);
@@ -355,7 +370,7 @@ public class Util {
     private static void writeZip(File file,String parentPath,ZipOutputStream zipOutputStream){
         if (!file.exists()){
             errorLog.error(file.getAbsolutePath() + " 不存在！");
-            throw new NotFoundException(file.getAbsolutePath() + " 不存在！");
+            CommonUtil.throwNotFoundException(file.getAbsolutePath() + " 不存在！");
         }
         if (file.isDirectory()){
             parentPath += file.getName() + File.separator;
@@ -382,7 +397,7 @@ public class Util {
                 }
             }catch (Exception e){
                 errorLog.error(file.getAbsolutePath() + " 读取失败！或压缩写入过程出现问题！");
-                throw new IoException(file.getAbsolutePath() + " 读取失败！或压缩写入过程出现问题！");
+                CommonUtil.throwIoException(file.getAbsolutePath() + " 读取失败！或压缩写入过程出现问题！");
             }finally {
                 Util.close(bufferedInputStream);
                 Util.close(fileInputStream);
@@ -477,7 +492,7 @@ public class Util {
             }
         } catch (Exception e) {
             Util.errorLog.error(errorPre + file.getAbsolutePath() + " 文件读取失败！" + e.getMessage());
-            throw new IoException(file.getAbsolutePath() + " 文件读取失败！" + e.getMessage());
+            CommonUtil.throwIoException(file.getAbsolutePath() + " 文件读取失败！" + e.getMessage());
         } finally {
             Util.close(bufferedReader);
             Util.close(fileReader);
@@ -501,13 +516,13 @@ public class Util {
      * @return Date
      */
     private static Date stringToDate(String dateString){
-        Date date;
+        Date date = null;
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         try {
             date = dateFormat.parse(dateString);
         } catch (ParseException e) {
             Util.errorLog.error("字符串转Date失败！dateString = " + dateString);
-            throw new ParameterException("字符串转Date失败！dateString = " + dateString);
+            CommonUtil.throwParameterException("字符串转Date失败！dateString = " + dateString);
         }
         return date;
     }
@@ -523,7 +538,7 @@ public class Util {
         String unKnown = "unKnown";
         String xip = request.getHeader("X-Real-IP");
         String xFor = request.getHeader("X-Forwarded-For");
-        if(!StringUtils.isEmpty(xFor) && !unKnown.equalsIgnoreCase(xFor)){
+        if(StringUtils.hasLength(xFor) && !unKnown.equalsIgnoreCase(xFor)){
             /*
              * 多次反向代理后会有多个ip值，第一个ip才是真实ip
              */
@@ -535,22 +550,22 @@ public class Util {
             }
         }
         xFor = xip;
-        if(!StringUtils.isEmpty(xFor) && !unKnown.equalsIgnoreCase(xFor)){
+        if(StringUtils.hasLength(xFor) && !unKnown.equalsIgnoreCase(xFor)){
             return xFor;
         }
-        if (StringUtils.isEmpty(xFor) || unKnown.equalsIgnoreCase(xFor)) {
+        if (!StringUtils.hasLength(xFor) || unKnown.equalsIgnoreCase(xFor)) {
             xFor = request.getHeader("Proxy-Client-IP");
         }
-        if (StringUtils.isEmpty(xFor) || unKnown.equalsIgnoreCase(xFor)) {
+        if (!StringUtils.hasLength(xFor) || unKnown.equalsIgnoreCase(xFor)) {
             xFor = request.getHeader("WL-Proxy-Client-IP");
         }
-        if (StringUtils.isEmpty(xFor) || unKnown.equalsIgnoreCase(xFor)) {
+        if (!StringUtils.hasLength(xFor) || unKnown.equalsIgnoreCase(xFor)) {
             xFor = request.getHeader("HTTP_CLIENT_IP");
         }
-        if (StringUtils.isEmpty(xFor) || unKnown.equalsIgnoreCase(xFor)) {
+        if (!StringUtils.hasLength(xFor) || unKnown.equalsIgnoreCase(xFor)) {
             xFor = request.getHeader("HTTP_X_FORWARDED_FOR");
         }
-        if (StringUtils.isEmpty(xFor) || unKnown.equalsIgnoreCase(xFor)) {
+        if (!StringUtils.hasLength(xFor) || unKnown.equalsIgnoreCase(xFor)) {
             xFor = request.getRemoteAddr();
         }
         return xFor;

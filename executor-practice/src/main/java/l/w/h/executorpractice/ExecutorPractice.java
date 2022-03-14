@@ -14,8 +14,8 @@ public class ExecutorPractice {
 
     // private volatile
 
-    private ThreadPoolExecutor threadPoolExecutor() throws FileNotFoundException {
-        return new ThreadPoolExecutor(5, 10, 1, TimeUnit.SECONDS, new LinkedBlockingDeque<>(20),Executors.defaultThreadFactory());
-    }
+//    private ThreadPoolExecutor threadPoolExecutor() throws FileNotFoundException {
+//        return new ThreadPoolExecutor(5, 10, 1, TimeUnit.SECONDS, new LinkedBlockingDeque<>(20),Executors.defaultThreadFactory());
+//    }
 
 }
