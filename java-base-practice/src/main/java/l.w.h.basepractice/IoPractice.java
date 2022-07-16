@@ -2,6 +2,7 @@ package l.w.h.basepractice;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.util.Objects;
 
 /**
  * @author lwh
@@ -14,9 +15,11 @@ public class IoPractice {
      */
     public static void main(String[] args) throws IOException {
         // bufferReaderTest();
-        bufferWriteTest();
+//        bufferWriteTest();
         // byteInputStreamTest();
         // byteOutputTest();
+//        gainAnnotationValueTest(new Student());
+        gainAnnotationValueFromClass(Student.class);
     }
 
     private final static String TEST_PATH = "./tmp/test.txt";
@@ -70,6 +73,28 @@ public class IoPractice {
         }
         try(BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file))) {
             bufferedWriter.write("test");
+        }
+    }
+
+    /**
+     * 获取指定注解的value值
+     * 根据对象
+     */
+    private static <T> void gainAnnotationValueTest(T t){
+        CustomAnnotation annotation = t.getClass().getAnnotation(CustomAnnotation.class);
+        if (!Objects.isNull(annotation)){
+            System.out.println(annotation.value());
+        }
+    }
+
+    /**
+     * 获取指定注解的value值
+     * 根据类信息
+     */
+    private static <T> void gainAnnotationValueFromClass(Class<T> tClass){
+        CustomAnnotation annotation = tClass.getAnnotation(CustomAnnotation.class);
+        if (!Objects.isNull(annotation)){
+            System.out.println(annotation.value());
         }
     }
 

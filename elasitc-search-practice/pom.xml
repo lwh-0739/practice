@@ -59,13 +59,13 @@
 
     </dependencies>
 
-    <repositories>
-        <repository>
-            <id>es-snapshots</id>
-            <name>elasticsearch snapshot repo</name>
-            <url>https://snapshots.elastic.co/maven/</url>
-        </repository>
-    </repositories>
+<!--    <repositories>-->
+<!--        <repository>-->
+<!--            <id>es-snapshots</id>-->
+<!--            <name>elasticsearch snapshot repo</name>-->
+<!--            <url>https://snapshots.elastic.co/maven/</url>-->
+<!--        </repository>-->
+<!--    </repositories>-->
 
     <build>
         <plugins>

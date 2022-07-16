@@ -51,7 +51,7 @@ public class MybatisPlusApplicationTest {
         // System.out.println(JSON.toJSONString(orderPage));
 
         Order order = orderMapper.selectById(1);
-        orderMapper.update(order, Wrappers.<Order>lambdaUpdate().eq(Order::getId,1).setSql("pay_amount = pay_amount + 100"));
+//        orderMapper.update(order, Wrappers.<Order>lambdaUpdate().eq(Order::getId,1).setSql("pay_amount = pay_amount + 100"));
     }
 
 }
